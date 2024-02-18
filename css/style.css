@@ -13,4 +13,16 @@
     border: none;
     margin: 35px 0 !important;
   }
-  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: none;
+    padding: 12px; /* Adjust padding for th elements */
+    text-align: center;
+}
+th, td {
+   
+    margin: 6px; /* Adjust margin for space between th elements */
+}

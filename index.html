@@ -55,7 +55,7 @@
     <!-- banner section start -->
      <section class="banner mt-12 mx-4">
       <div class="container mx-auto ">
-      <div class="hero min-h-screen bg-[url(images/banner.png)] rounded-xl">
+      <div class="hero min-h-screen bg-[url(images/banner.png)] bg-cover bg-no-repeat rounded-xl">
         <div class="hero-content text-center">
           <div class="">
             <h1 class="banner-tittle font-raleway text-3xl lg:text-6xl font-semibold text-white">End-to-End Travel with</h1>
@@ -210,58 +210,129 @@
     <!-- seat choose part start -->
     <div class="card container mx-auto bg-[#FFFFFF] rounded-2xl mt-9 ">
       
-        <div class="p-9 mt-6">
-          <div>
-          <div><h2 class="card-title">Card title!</h2></div>
+        <div class="p-9 mt-6 grid grid-cols-1  lg:grid-cols-2 items-center gap-7 ">
+          <div class="ticket-container">
+          <div><h2 class="card-title">Select Your Seat</h2></div>
           <!-- available select -->
           <div class="flex justify-between items-center mt-6">
             <div class="flex justify-center items-center gap-2"><img src="images/seat-gray.png" alt="" srcset="">
-            <h3>Available</h3></div>
+            <h3 class="font-medium text-[#03071280] font-inter text-lg">Available</h3></div>
             <div class="flex justify-center items-center gap-2"><img src="images/seat-green-filled.png" alt="" srcset="">
-              <h3>Available</h3></div>
+              <h3 class="font-medium text-[#1DD100] font-inter text-lg">Selected</h3></div>
           </div>
           <div class="flex justify-between items-center mt-6">
             <div class="flex justify-center items-center gap-2"><div></div></div>
             <div class="items-center h-full"><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><a href=""><img src="images/wheel.png" class="h-auto" alt=""></a></button></div>
           </div>
 <!--  ticket click part start -->
-               
+              
                 <!-- left side -->
                 <div class="flex justify-between items-center gap-10  mt-6">
                 <div class="grid grid-cols-3 items-center gap-10 ">
                   <h1>A</h1>
-                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>A1</span></button></div>
-                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>A2</span></button></div>
+                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span class=" text-[#03071280] font-inter font-medium text-lg">A1</span></button></div>
+                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span class=" text-[#03071280] font-inter font-medium text-lg">A2</span></button></div>
                 </div>
                 <div class="grid grid-cols-2 items-center gap-10 ">
                 
-                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span >A3</span></button></div>
-                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>A4</span></button></div>
+                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span class=" text-[#03071280] font-inter font-medium text-lg" >A3</span></button></div>
+                  <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span class=" text-[#03071280] font-inter font-medium text-lg">A4</span></button></div>
                 </div>
               </div>
                 <!-- left side1 end -->
                 <!-- left side2 start -->
-                <div class="flex justify-between items-center mt-6 gap-10">
+                <div class="flex justify-between items-center mt-6 gap-10 ">
                   <div class="grid grid-cols-3 items-center gap-10 ">
                     <h1>B</h1>
-                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>B1</span></button></div>
-                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>B2</span></button></div>
+                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "><span class=" text-[#03071280] font-inter font-medium text-lg" >B1</span></button></div>
+                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "><span class=" text-[#03071280] font-inter font-medium text-lg">B2</span></button></div>
                   </div>
                   <div class="grid grid-cols-2 items-center gap-10 ">
                   
-                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>B3</span></button></div>
-                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span>B4</span></button></div>
+                    <div ><button class="btn btn-xs  sm:btn-sm md:btn-md lg:btn-lg "><span class=" text-[#03071280] font-inter font-medium text-lg">B3</span></button></div>
+                    <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><span class=" text-[#03071280] font-inter font-medium text-lg">B4</span></button></div>
                   </div>
                 </div>
+                </div>
                 <!-- left side2 end -->
-
-         </div>
+                <!-- right side start  -->
+                <div class="right-side">
+                  <div><h2 class="card-title">Select Your Seat</h2></div>
+                  <div class="ticket-amount bg-[#f2f2f2] mt-6">
+                     <div>
+                      <!-- 1st table -->
+                     <div><table>
+                        <thead>
+                          <tr>
+                            <th class="font-inter text-base font-medium text-[#030712] ">Seat<sup class="bg-green-400 text-white p-1 font-inter font-bold text-xs rounded-xl">1</sup></th>
+                            <th class="font-inter text-base font-medium text-[#030712]">Class</th>
+                            <th class="font-inter text-base font-medium text-[#030712]">Price</th>
+                          </tr>
+                         </thead>
+                      </table></div>
+                       <!--2nd table  -->
+                      <div >
+                        <table>
+                          <thead>
+                            <tr>
+                              <th class="font-inter text-base font-medium text-[#030712]">Total Price</th>
+                              <th> </th>
+                              <th class="font-inter text-base font-medium text-[#030712]">BDT 1100</th>
+                            </tr>
+                           </thead>
+                        </table></div> 
+                        <!-- 3rd table -->
+                        <div >
+                          <table>
+                            <thead>
+                              <tr>
+                                <th class="font-inter text-base font-medium text-[#030712]">Grand Price</th>
+                                <th></th>
+                                <th class="font-inter text-base font-medium text-[#030712]">BDT 1100</th>
+                              </tr>
+                             </thead>
+                          </table></div> 
+                        <!-- 3rd table end -->
+                     </div>
+                  </div>
+                <!-- input form -->
+                <div class="form-part">
+                  <form>
+                    <div class="container flex flex-col justify-start mt-9">
+            
+                  
+                      <div class="flex flex-col "><label for="name" class="text-left font-inter text-base font-semibold"><b>Passenger Name*</b></label>
+                      <input class="border-2 mt-3 border-[#0307121A] text-inter rounded-xl p-4 placeholder:text-[#03071266]"  type="text" placeholder="Enter Your name" name="" id="name" required>
+                    </div>
+                    <div class="flex flex-col mt-4"><label for="number" class="text-left font-inter text-base font-semibold"><b>Phone Number*</b></label>
+                      <input class="border-2 mt-3 border-[#0307121A] text-inter rounded-xl p-4 placeholder:text-[#03071266]"  type="number" placeholder="Enter Your number" name="" id="number" required>
+                    </div>
+                  
+                    <div class="flex flex-col  mt-4 mb-4 "><label for="emwil" class="text-left font-inter text-base font-semibold"><b>Email ID</b></label>
+                      <input class="border-2 mt-3 border-[#0307121A] text-inter rounded-xl p-4 placeholder:text-[#03071266]"  type="text" placeholder="Enter Your email id" name="" id="email" required>
+                    </div class="mt-4">
+                 <button class="btn btn-disabled" tabindex="-1" role="button" aria-disabled="true">Next</button>
+                    </div>
+                    
+                    
+                  </form>
+                  
+                  
+                </div>
+                <!-- input form end -->
+               </div>
+               <!-- right side end -->
+        </div>
+      </div>
                <!-- seat choose part end -->
-       
-      </div>
       
-      </div>
-    </div>
+
+
+
+       </div>
+       </div>
+      
+  
     </section>
 
    </main>
