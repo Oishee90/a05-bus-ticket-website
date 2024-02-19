@@ -143,8 +143,8 @@ emailinput.addEventListener("change", function() {
         btn.classList.add("btn-disabled")
        
           numberinput.value="";
-    nameinput.value="";
-    emailinput.value="";
+          nameinput.value="";
+        emailinput.value="";
        
     }
  
