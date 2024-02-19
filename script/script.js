@@ -135,9 +135,7 @@ emailinput.addEventListener("change", function() {
     if(email !== "" && number !== "" && name !== "" && totalPrice > 0){
         btn.classList.remove("btn-disabled")
     }
-    if(email === "" && number === "" && name === "" && totalPrice < 0){
-        alert("Complete all fields and buy at least one ticket ")
-    }
+   
    
     else{
         alert("Complete all fields and buy at least one ticket ")
