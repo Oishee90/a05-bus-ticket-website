@@ -46,38 +46,123 @@ for (const seat of seats) {
     });
 }
 
- const btn = document.getElementById("apply-cupon");
- btn.addEventListener('click', function() {
-const couponElement = document.getElementById("cupon-form").value;
-const cuponCode = couponElement.split("").join("").toUpperCase();
-console.log(cuponCode);
-const totalPriceElement = document.getElementById('total-cost');
-const  totalPrice = parseFloat(totalPriceElement.innerText);
-if(totalPrice  === 2200){
-    if(cuponCode === "NEW15" ){
-       const discountAmount = totalPrice * 0.15;
-       const grandTotal = document.getElementById('grand-total')
-       grandTotal.innerText = totalPrice - discountAmount.toFixed(2);
-       document.getElementById('cupon-form').value = " ";
+//  
 
 
+
+const applyInput=document.getElementById('cupon-form');
+const applyBtn=document.getElementById("apply-cupon");
+applyInput.addEventListener("click",function(){
+    const totalPriceElement = document.getElementById('total-cost');
+    const  totalPrice = parseFloat(totalPriceElement.innerText);
+    if(totalPrice  === 2200){
+        applyInput.removeAttribute("readonly");
+        
     }
-    else if(cuponCode === "Couple 20"){
-        const discountAmount = totalPrice * 0.20;
-        const grandTotal = document.getElementById('grand-total')
-        grandTotal.innerText = totalPrice - discountAmount.toFixed(2);
-        document.getElementById('cupon-form').value = " ";
+    else{
+        alert("You need to buy atleast 4 tickets to apply any coupne.");
+    }
+});
+
+applyInput.addEventListener("change",function(){
+    const cuponCode = document.getElementById("cupon-form").value;
+        if(cuponCode === "NEW15" || cuponCode === "Couple 20"){
+          applyBtn.classList.remove("btn-disabled");
+        }
+        
+        else{
+            applyInput.value="";
+            alert("Invalid Coupne Code");
+        }
+});
+
+applyBtn.addEventListener("click",function(){
+    const cuponCode = document.getElementById("cupon-form").value;
+    
+    if(cuponCode=="NEW15"){
+        firstCoupne();
+       
+    }
+    else if(cuponCode=="Couple 20"){
+        secondCoupne();
     }
     else{
         alert("Invalid Coupne Code");
     }
-}
-else{
-    alert("Please At least 4 tickets buy")
+    document.getElementById("cupon-form").classList.add("hidden");
+    applyBtn.classList.add("hidden");
+    applyInput.value="";
+    applyBtn.classList.add("btn-disabled");
+});
+
+
+function firstCoupne(){
+    const totalPriceElement = document.getElementById('total-cost');
+    const  totalPrice = parseFloat(totalPriceElement.innerText);  
+    const discountAmount = totalPrice * 0.15;
+    const grandTotal = document.getElementById('grand-total')
+    grandTotal.innerText = totalPrice - discountAmount.toFixed(2);
+    document.getElementById('cupon-form').value = " ";
+    applyInput.value="";
 }
 
 
-})
+function secondCoupne(){
+    const totalPriceElement = document.getElementById('total-cost');
+    const  totalPrice = parseFloat(totalPriceElement.innerText);  
+    const discountAmount = totalPrice * 0.20;
+    const grandTotal = document.getElementById('grand-total')
+    grandTotal.innerText = totalPrice - discountAmount.toFixed(2);
+    document.getElementById('cupon-form').value = " ";
+    applyInput.value="";
+}
+// form and tickets validation
+const btn = document.getElementById('myButton');
+const emailinput = document.getElementById('email');
+const numberinput = document.getElementById('number');
+const nameinput = document.getElementById('name');
+const modal = document.getElementById('continue');
+
+
+emailinput.addEventListener("change", function() {
+    const email = emailinput.value.trim();
+    const number = numberinput.value.trim();
+    const name = nameinput.value.trim();
+
+    const totalPriceElement = document.getElementById('total-cost');
+    const  totalPrice = parseFloat(totalPriceElement.innerText);
+   
+    if((email !== " " && number !== " "  && name !== " ") && totalPrice > 0){
+        btn.classList.remove("btn-disabled")
+    }
+   
+    else{
+        alert("Please fill all the required fields and make sure the total cost is greater than zero. ")
+        
+        btn.classList.add("btn-disabled")
+       
+        numberinput.value="";
+        nameinput.value="";
+        emailinput.value="";
+       
+    }
+ 
+  
+   
+    
+});
+modal.addEventListener("click",function(){
+    numberinput.value="";
+    nameinput.value="";
+    emailinput.value="";
+    setInnerText('total-cost', 0);
+    setInnerText('grand-total', 0);
+    btn.classList.add("btn-disabled");
+   
+});
+
+
+
 
 function getElementText(elementId){
     const element = document.getElementById(elementId)
