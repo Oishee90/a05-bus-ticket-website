@@ -60,7 +60,7 @@ applyInput.addEventListener("click",function(){
         
     }
     else{
-        alert("You need to buy atleast 4 tickets to apply any coupne.");
+        alert("You have to buy at least 4 tickets to get the coupon");
     }
 });
 
@@ -132,18 +132,21 @@ emailinput.addEventListener("change", function() {
     const totalPriceElement = document.getElementById('total-cost');
     const  totalPrice = parseFloat(totalPriceElement.innerText);
    
-    if((email !== " " && number !== " "  && name !== " ") && totalPrice > 0){
+    if(email !== "" && number !== "" && name !== "" && totalPrice > 0){
         btn.classList.remove("btn-disabled")
+    }
+    if(email === "" && number === "" && name === "" && totalPrice < 0){
+        alert("Complete all fields and buy at least one ticket ")
     }
    
     else{
-        alert("Please fill all the required fields and make sure the total cost is greater than zero. ")
+        alert("Complete all fields and buy at least one ticket ")
         
         btn.classList.add("btn-disabled")
        
-        numberinput.value="";
-        nameinput.value="";
-        emailinput.value="";
+          numberinput.value="";
+    nameinput.value="";
+    emailinput.value="";
        
     }
  
@@ -152,12 +155,7 @@ emailinput.addEventListener("change", function() {
     
 });
 modal.addEventListener("click",function(){
-    numberinput.value="";
-    nameinput.value="";
-    emailinput.value="";
-    setInnerText('total-cost', 0);
-    setInnerText('grand-total', 0);
-    btn.classList.add("btn-disabled");
+    location.reload();
    
 });
 
